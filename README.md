@@ -2,6 +2,8 @@
 
 Kaggle S&P 500 excess returns forecasting 대회를 위해 만든 금융 시계열 feature denoising 파이프라인입니다.
 
+**Competition Result:** 574 / 3,677 teams, top 15.6% (approximately top 16%).
+
 대회 목표는 S&P 500의 일별 초과수익을 예측하고, 매 거래일 종가 기준으로 S&P 500 보유 비중을 `0`에서 `2` 사이로 결정하는 것입니다. 평가 지표는 시장 대비 초과 성과를 보면서도 120% volatility constraint를 넘는 전략을 강하게 penalize합니다.
 
 이 프로젝트는 최종 allocation model 자체라기보다, 대회 데이터의 noisy tabular financial features를 더 안정적인 입력 신호로 바꾸기 위한 전처리/표현학습 실험입니다. feature clustering, Mamba 기반 denoiser 학습, causal denoising, denoising 결과 검증까지 하나의 흐름으로 묶어, denoised feature가 downstream return prediction과 trading signal에 도움이 되는지 검증하는 것을 목표로 합니다.
